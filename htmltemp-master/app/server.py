@@ -12,7 +12,7 @@ from starlette.staticfiles import StaticFiles
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1-A_UF5WSKB7J1nQ8golY2qjVZFPq9_P7?alt=media&key=AIzaSyAMKLOigDiMN_rdcVpMu66ZLAD_-Oxx8RM'
 export_file_name = 'export.pkl'
 
-classes = ['black', 'grizzly', 'teddys']
+classes = memes = ['Woman Yelling At Cat', 'Distracted Boyfriend', 'Drake Hotline Bling', 'Two Buttons', 'Mocking Spongebob', 'Change My Mind', 'Left Exit 12 Off Ramp', 'Expanding Brain', 'Batman Slapping Robin', 'Blank Nut Button', 'Running Away Balloon', 'Spongebob Ight Imma Head Out', 'Surprised Pikachu', 'Boardroom Meeting Suggestion', 'Tuxedo Winnie The Pooh']
 path = Path(__file__).parent
 
 app = Starlette()
