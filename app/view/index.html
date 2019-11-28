@@ -14,27 +14,8 @@ body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
-  background-color: #fff99e
+  background-color: #d24dff
 }
-  
-.button {
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-
-.button1 {border-radius: 2px;}
-.button2 {border-radius: 4px;}
-.button3 {border-radius: 8px;}
-.button4 {border-radius: 12px;}
-.button5 {border-radius: 50%;}
-
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
@@ -42,22 +23,18 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('https://i.kym-cdn.com/entries/icons/original/000/020/147/drake.jpg');
   min-height: 100%;
 }
-
 /* Second image (Portfolio) */
 .bgimg-2 {
   background-image: url(https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png");
   min-height: 400px;
 }
-
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -86,7 +63,7 @@ body, html {
                accept='image/*'
                onchange='showPicked(this)'>
   </div>
-      <button class='choose-file-button button button4' type='button' onclick='showPicker()'><font color="white">Select I🅱️age</font></button>
+      <button class='choose-file-button' type='button' onclick='showPicker()'>Select I🅱️age</button>
       <div class='upload-label'>
         <label id='upload-label'>No file chosen</label>
       </div>
@@ -94,7 +71,7 @@ body, html {
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
       </div>
       <div class='analyze'>
-        <button id='analyze-button button button4' class='analyze-button' type='button' onclick='analyze()'><font color="white">Analyze</font></button>
+        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
       </div>
       <div class='result-label'>
         <label id='result-label'></label>      
