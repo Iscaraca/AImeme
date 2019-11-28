@@ -1,6 +1,23 @@
 var el = x => document.getElementById(x);
 
+function showPicker() {
+  el("file-input").click();
+}
+
+function showPicked(input) {
+  el("upload-label").innerHTML = input.files[0].name;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    el("image-picked").src = e.target.result;
+    el("image-picked").className = "";
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
 function analyze() {
+  var uploadFiles = el("file-input").files;
+  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+
   el("analyze-button").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
@@ -12,25 +29,13 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      if (response["result"] == "1") {
-        el("result-label").innerHTML = `This text is okay`;
-      } else if (response["result"] == "0") {
-        el("result-label").innerHTML = `This text is good`;
-      } else if (response["result"] == "2") {
-        el("result-label").innerHTML = `This text is bad`;
-      } else if (response["result"] == "3") {
-        el("result-label").innerHTML = `This text is evil`;
-      } else if (response["result"] == "4") {
-        el("result-label").innerHTML = `This text is the worst`;
-      } else {
-        el("result-label").innerHTML = `${response["result"]}`;
-      }
+      el("result-label").innerHTML = `Result = ${response["result"]}`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };
 
   var fileData = new FormData();
-  fileData.append("input-text", el("input-text").value);
+  fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
 }
 
