@@ -52,7 +52,7 @@ button.choose-file-button {
 button.analyze-button {
     width: 200px;
     height: 40px;
-    border: solid 1px #transparent;
+    border: solid 1px transparent;
     border-radius: 2px;
     background-color: #000000;
     font-size: 13px;
